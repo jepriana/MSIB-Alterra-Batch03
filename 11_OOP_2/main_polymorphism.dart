@@ -58,7 +58,6 @@ void main(List<String> args) {
   var harimau = Harimau();
   print('Bila harimau mengejar, maka:');
   for (var obj in data) {
-    obj.makan();
-    obj.berlari();
+    harimau.mengejar(obj);
   }
 }
