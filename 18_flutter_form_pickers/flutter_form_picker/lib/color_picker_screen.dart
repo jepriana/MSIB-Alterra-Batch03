@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class ColorPickerScreen extends StatefulWidget {
   const ColorPickerScreen({super.key});
@@ -33,12 +34,103 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
             height: 8,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('Pick with Block Picker'),
+                    content: BlockPicker(
+                      pickerColor: _currentColor,
+                      onColorChanged: (color) {
+                        setState(() {
+                          _currentColor = color;
+                        });
+                      },
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text('Select'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(_currentColor),
               foregroundColor: MaterialStateProperty.all(Colors.white),
             ),
-            child: const Text('Pick Color'),
+            child: const Text('Pick with Block Picker'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('Pick with Color Picker'),
+                    content: ColorPicker(
+                      pickerColor: _currentColor,
+                      onColorChanged: (color) {
+                        setState(() {
+                          _currentColor = color;
+                        });
+                      },
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text('Select'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(_currentColor),
+              foregroundColor: MaterialStateProperty.all(Colors.white),
+            ),
+            child: const Text('Pick with Color Picker'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('Pick with Slide Picker'),
+                    content: SlidePicker(
+                      pickerColor: _currentColor,
+                      onColorChanged: (color) {
+                        setState(() {
+                          _currentColor = color;
+                        });
+                      },
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text('Select'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(_currentColor),
+              foregroundColor: MaterialStateProperty.all(Colors.white),
+            ),
+            child: const Text('Pick with Slide Picker'),
           ),
         ],
       ),
