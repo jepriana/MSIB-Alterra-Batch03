@@ -10,6 +10,25 @@ class FilePickerScreen extends StatefulWidget {
 class _FilePickerScreenState extends State<FilePickerScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text('Pick Files'),
+          const SizedBox(
+            height: 16,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.purple),
+              foregroundColor: MaterialStateProperty.all(Colors.white),
+            ),
+            child: const Text('Pick and Open File'),
+          ),
+        ],
+      ),
+    );
   }
 }
