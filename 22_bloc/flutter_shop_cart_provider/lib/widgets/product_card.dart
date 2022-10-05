@@ -20,19 +20,23 @@ class ProductCard extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            child: product.image != null
-                ? Image.network(
-                    product.image!,
-                    height: double.infinity,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  )
-                : Image.asset(
-                    'assets/images/default.jpg',
-                    height: double.infinity,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+            child: ClipRRect(
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(12)),
+              child: product.image != null
+                  ? Image.network(
+                      product.image!,
+                      height: double.infinity,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    )
+                  : Image.asset(
+                      'assets/images/default.jpg',
+                      height: double.infinity,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
