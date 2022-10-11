@@ -11,3 +11,11 @@ abstract class CartEvent extends Equatable {
 class AddProduct extends CartEvent {
   const AddProduct(super.product);
 }
+
+class UpdateProduct extends CartEvent {
+  const UpdateProduct(super.product);
+}
+
+class DeleteProduct extends CartEvent {
+  const DeleteProduct(super.product);
+}

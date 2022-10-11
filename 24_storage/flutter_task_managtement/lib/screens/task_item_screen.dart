@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task_managtement/models/task_model.dart';
+import 'package:flutter_task_managtement/providers/db_manager.dart';
 import 'package:nanoid/nanoid.dart';
+import 'package:provider/provider.dart';
 
 class TaskItemScreen extends StatefulWidget {
-  final Function(TaskModel) onCreate;
+  // final Function(TaskModel) onCreate;
   const TaskItemScreen({
     super.key,
-    required this.onCreate,
+    // required this.onCreate,
   });
 
   @override
@@ -53,7 +55,9 @@ class _TaskItemScreenState extends State<TaskItemScreen> {
       icon: const Icon(Icons.add_task),
       onPressed: () {
         final task = TaskModel(id: nanoid(10), taskName: _taskName);
-        widget.onCreate(task);
+        // widget.onCreate(task);
+        Provider.of<DbManager>(context, listen: false).addTask(task);
+        Navigator.pop(context);
       },
       label: const Text('Create Task'),
     );

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_cart/bloc/cart_bloc.dart';
+import 'package:flutter_shop_cart/bloc/cart/cart_bloc.dart';
 import 'package:intl/intl.dart';
 
 class CartPage extends StatelessWidget {
+  static const routeName = '/cart';
   CartPage({super.key});
   final currency = NumberFormat("#,##0.00", "id_ID");
 

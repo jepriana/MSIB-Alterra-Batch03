@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_cart/bloc/cart_bloc.dart';
+import 'package:flutter_shop_cart/bloc/cart/cart_bloc.dart';
+import 'package:flutter_shop_cart/pages/cart_page.dart';
+import 'package:flutter_shop_cart/pages/input_product_page.dart';
 import 'package:flutter_shop_cart/pages/product_page.dart';
 
 void main() {
@@ -23,7 +25,12 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           // scaffoldBackgroundColor: Colors.purpleAccent.withOpacity(0.25),
         ),
-        home: const ProductPage(),
+        initialRoute: ProductPage.routeName,
+        routes: {
+          ProductPage.routeName: (context) => const ProductPage(),
+          CartPage.routeName: (context) => CartPage(),
+          InputProductPage.routeName: (context) => const InputProductPage(),
+        },
       ),
     );
   }

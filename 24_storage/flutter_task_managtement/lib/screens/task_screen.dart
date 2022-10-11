@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task_managtement/components/profile_sheet.dart';
+import 'package:flutter_task_managtement/providers/db_manager.dart';
 import 'package:flutter_task_managtement/providers/task_manager.dart';
 import 'package:flutter_task_managtement/screens/empty_task_screen.dart';
 import 'package:flutter_task_managtement/screens/task_item_screen.dart';
@@ -15,7 +16,7 @@ class TaskScreen extends StatefulWidget {
 }
 
 Widget _buildTaskScreen(BuildContext context) {
-  return Consumer<TaskManager>(
+  return Consumer<DbManager>(
     builder: (context, manager, child) {
       if (manager.tasks.isNotEmpty) {
         return TaskListScreen(manager: manager);
@@ -56,14 +57,15 @@ class _TaskScreenState extends State<TaskScreen> {
       body: _buildTaskScreen(context),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          final manager = Provider.of<TaskManager>(context, listen: false);
+          // final manager = Provider.of<TaskManager>(context, listen: false);
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return TaskItemScreen(onCreate: (task) {
-                  manager.addTask(task);
-                  Navigator.pop(context);
-                });
+                // return TaskItemScreen(onCreate: (task) {
+                //   manager.addTask(task);
+                //   Navigator.pop(context);
+                // });
+                return TaskItemScreen();
               },
             ),
           );

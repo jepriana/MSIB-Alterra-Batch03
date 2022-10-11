@@ -11,3 +11,15 @@ abstract class CartState extends Equatable {
 class CartInitial extends CartState {
   const CartInitial(super.cart);
 }
+
+class Loading extends CartState {
+  const Loading(super.cart);
+}
+
+class Loaded extends CartState {
+  const Loaded(super.cart);
+}
+
+class Failed extends CartState {
+  const Failed(super.cart);
+}

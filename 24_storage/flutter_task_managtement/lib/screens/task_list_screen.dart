@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task_managtement/components/task_item_card.dart';
+import 'package:flutter_task_managtement/providers/db_manager.dart';
 import 'package:flutter_task_managtement/providers/task_manager.dart';
 
 class TaskListScreen extends StatelessWidget {
-  final TaskManager manager;
+  final DbManager manager;
   const TaskListScreen({super.key, required this.manager});
 
   @override
@@ -18,7 +19,7 @@ class TaskListScreen extends StatelessWidget {
             key: Key(task.id),
             task: task,
             onPressed: () {
-              manager.deleteTask(index);
+              manager.deleteTask(task.id);
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(

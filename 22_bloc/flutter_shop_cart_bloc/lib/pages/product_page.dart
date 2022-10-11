@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop_cart/pages/cart_page.dart';
+import 'package:flutter_shop_cart/pages/input_product_page.dart';
 import 'package:flutter_shop_cart/widgets/product_list.dart';
 
 class ProductPage extends StatefulWidget {
+  static const routeName = '/product';
   const ProductPage({super.key});
 
   @override
@@ -32,6 +34,11 @@ class _ProductPageState extends State<ProductPage> {
         ],
       ),
       body: const ProductList(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () =>
+            Navigator.of(context).pushNamed(InputProductPage.routeName),
+        child: const Icon(Icons.add_rounded),
+      ),
     );
   }
 }
