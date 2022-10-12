@@ -44,7 +44,7 @@ class _EntryPhoneBookScreenState extends State<EntryPhoneBookScreen> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Entry Contact'),
+        title: Text(updateContact != null ? 'Edit Contact' : 'Entry Contact'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),

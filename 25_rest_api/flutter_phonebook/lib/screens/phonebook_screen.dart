@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phonebook/screens/entry_phoneboook_screen.dart';
 import 'package:flutter_phonebook/widgets/phonebook_list.dart';
 
-class PhoneBookScreen extends StatefulWidget {
+class PhoneBookScreen extends StatelessWidget {
   static const routeName = '/contacts';
+
   const PhoneBookScreen({super.key});
 
-  @override
-  State<PhoneBookScreen> createState() => _PhoneBookScreenState();
-}
-
-class _PhoneBookScreenState extends State<PhoneBookScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
