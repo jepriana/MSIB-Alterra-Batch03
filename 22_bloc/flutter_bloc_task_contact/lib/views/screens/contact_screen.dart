@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_task_contact/view_models/contact/contact_bloc.dart';
 import 'package:flutter_bloc_task_contact/views/screens/entry_contact_screen.dart';
 import 'package:flutter_bloc_task_contact/views/widgets/contact_list.dart';
 
